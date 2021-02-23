@@ -5,7 +5,7 @@ import { Input } from '@material-ui/core';
 
 async function insertUserApi(data) {
     var new_data = { binance_key: data.binance_key, binance_private: data.binance_private };
-    fetch('https://currenger.herokuapp.com/profile', {
+    fetch('https://currenger.herokuapp.com/profile/', {
         method: 'PUT',
         body: JSON.stringify(new_data),
         headers: {
