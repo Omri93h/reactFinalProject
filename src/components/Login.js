@@ -14,8 +14,8 @@ async function insertUserApi(data) {
         credentials: 'include',
         withCredentials: 'true'
     })
-        .then(data => console.log(data))
-        .catch(err => console.log(err))
+        .then(data => console.log(data)) 
+        .catch(err => console.log(err)) 
 }
 
 export const loginButton = (
@@ -27,12 +27,12 @@ export const loginButton = (
 const Login = (props) => {
     console.log(props);
     const { control, handleSubmit } = useForm();
-    const onSubmit = async (data) => {
+    const onSubmit = (data) => {
         async function insert(data) {
             await insertUserApi(data);
         }
-        await insert(data)
-            .then(props.setHasBinanceAPI(true))
+        insert(data);
+        props.setHasBinanceAPI(true);
     }
 
     const formStyle = {

@@ -9,6 +9,7 @@ import CancelIcon from '@material-ui/icons/Cancel';
 const Dashboard = ({ balance, orders, totalValue }) => {
     const [loading, setLoading] = useState(true);
     const [refresh, setRefresh] = useState(false);
+    console.log(orders, balance, totalValue)
     useEffect(() => {
         async function getBalance() {
             const url = 'https://currenger.herokuapp.com/api/portfolio/';
@@ -130,7 +131,7 @@ const Dashboard = ({ balance, orders, totalValue }) => {
                         <div className="fade-in-fast">
                             <div style={{ margin: "0 auto", height: "180px", display: "block", maxWidth: "360px", marginTop: "10px" }}>
                                 {
-                                    balance.userBalance ?
+                                    balance ?
                                         < PieChart data={balance.userBalance} />
                                         : <div></div>
                                 }
