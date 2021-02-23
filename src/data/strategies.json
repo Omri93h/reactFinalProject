@@ -1,0 +1,8 @@
+[
+    {"id":0, "name":"Hammer", "img":"./img/hammer.png", "isPremium":false},
+    {"id":1, "name":"Piercing Line", "img":"./img/piercing_line.png", "isPremium":false},
+    {"id":2, "name":"Three White Soldiers", "img":"./img/three_white_soldiers.png", "isPremium":false},
+    {"id":3, "name":"Harami Cross", "img":"./img/Premium.jpg", "isPremium":true},
+    {"id":4, "name":"Marubozu", "img":"./img/Premium.jpg", "isPremium":true},
+    {"id":5, "name":"Abandoned Baby", "img":"./img/Premium.jpg", "isPremium":true}
+]

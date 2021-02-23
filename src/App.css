@@ -1,0 +1,404 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #ddd;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+.App {
+  font-family: "ubuntu";
+  background-color: "f1f1f1";
+  /* overflow: hidden; */
+}
+
+/* width */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: tra;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: #435279;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
+
+.fade-appear, .fade-enter {
+  opacity: 0;
+  z-index: 1;
+  transform: scale(0.8);
+}
+
+.fade-appear-active, .fade-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 500ms, transform 400ms;
+}
+
+.fade-exit {
+  opacity: 0;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: .1;
+    line-height: 100px;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.slide-up {
+  animation: slide-up 1s;
+}
+
+@keyframes fade-in-slow {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in-slow {
+  animation: fade-in-slow 4s;
+}
+
+@keyframes fade-in-fast {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in-fast {
+  animation: fade-in-fast 1.5s;
+}
+
+.material-icons {
+  vertical-align: middle;
+}
+
+.videoContainer {
+  position: absolute;
+}
+
+video {
+  position: fixed;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.react-numeric-input input {
+  padding: 5px;
+  width: 200px;
+  font-family: 'ubuntu';
+}
+
+header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #1c316d;
+  height: 60px;
+  line-height: 60px;
+  width: 100%;
+  vertical-align: middle;
+  color: white;
+  justify-content: space-between;
+  box-shadow: 0px 2px 4px gray;
+  font-size: 12px;
+  transition: 1s all ease
+}
+
+nav {
+  color: black;
+  height: calc(100vh - 60px);
+  position: relative;
+  width: 50px;
+  box-shadow: 0px 0px 4px #666;
+  display: table-cell;
+  font-size: 16px;
+  background-color: white;
+  color: lightblue;
+  transition: all 0.5s ease;
+}
+
+nav:hover {
+  width: 130px;
+  transition: all 0.3s ease;
+}
+
+nav ul {
+  list-style: none;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  color: #aaa;
+}
+
+nav:hover ul {
+  width: 130px;
+  transition: all 0.5s ease;
+}
+
+nav a {
+  color: inherit;
+}
+
+nav li {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  width: 150px;
+  margin: 40px 0px;
+  color: inherit;
+  margin-left: 5px;
+  transition: 0.4s all ease
+}
+
+g text {
+  font-size: 13.5px !important;
+  font-family: 'ubuntu' !important;
+  font-weight: bold;
+}
+
+nav .li-content {
+  opacity: 0;
+  transition: 0.4s ease-in-out;
+  margin-left: 2px;
+}
+
+nav:hover .li-content {
+  width: 145px;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+footer {
+  position: absolute;
+  bottom: 0px;
+  margin-bottom: -40px;
+  /* width: 100%; */
+  display: flex;
+  background-color: #222;
+  color: #555;
+  height: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  bottom: 0px;
+}
+
+header .user-side {
+  height: 60px;
+  position: absolute;
+  right: 30px;
+  display: flex;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 90%;
+  transition: width 0.5s ease-in-out;
+}
+
+main {
+  display: table-cell;
+  flex-direction: column;
+  background-color: #ddd;
+  overflow: hidden;
+}
+
+.page-header {
+  margin: 10px 0 15px 0;
+  display: block;
+  color: #1c316d;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+section {
+  border-radius: 10px;
+  background-color: white;
+  padding: 15px;
+  padding-top: 5px;
+  box-shadow: 0px 2px 4px 0px #ccc;
+  margin-bottom: 20px;
+  z-index: 1;
+}
+
+.table {
+  display: table;
+  width: 100%;
+}
+
+.section-row {
+  display: flex;
+  gap: 25px;
+  width: 100%;
+  justify-content: space-between;
+  height: fit-content;
+  transition: all 2s ease-in-out;
+}
+
+.small-section {
+  min-width: 200px;
+  max-width: 750px;
+  height: 200px;
+  flex-grow: 1;
+  transition: all 2s ease-in-out;
+  z-index: 99;
+}
+
+.big-section {
+  margin-bottom: 20px;
+  min-height: 150px;
+  height: auto;
+  z-index: 99;
+}
+
+.section-header {
+  display: block;
+  font-size: 15px;
+  color: #aaaaaa;
+  height: 20px;
+  box-shadow: 0px 2px 2px -2px #aaa;
+}
+
+.table-cell-header {
+  display: block;
+  font-size: 14px;
+  color: #999;
+  border-bottom: #ddd 1px dotted;
+  border-radius: 10%;
+  margin-bottom: 5px;
+}
+
+.big-section a {
+  margin: 0 auto;
+  color: #1c316d;
+  font-family: monospace;
+}
+
+.card {
+  position: relative;
+  border: 1px solid darkgrey;
+  border-radius: 10px;
+  min-width: 200px;
+  width: 300px;
+  height: 180px;
+  margin: 30px auto;
+  margin-bottom: 15px;
+  transition: .1s ease-out;
+  text-align: center;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 0px 3px 5px gray;
+  opacity: 0.6;
+}
+
+.premium-card {
+  position: relative;
+  border: 1px solid darkgrey;
+  border-radius: 10px;
+  min-width: 200px;
+  width: 300px;
+  height: 180px;
+  margin: 30px auto;
+  margin-bottom: 15px;
+  transition: .1s ease-out;
+  text-align: center;
+}
+
+.active-strategy {
+  position: relative;
+  background: linear-gradient(#ddd, grey);
+  border-radius: 5px;
+  min-width: 200px;
+  width: 270px;
+  height: 200px;
+  margin: 30px auto;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.card-header {
+  display: block;
+  position: absolute;
+  width: 100%;
+  line-height: 24px;
+  font-size: 22px;
+  margin: 12px 0;
+  text-align: center;
+}
+
+.card-image {
+  margin-top: 30px;
+  height: 150px;
+  background-size: cover;
+}
+
+.popup-content {
+  -webkit-animation: anvil 0.2s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
+  font-family: 'ubuntu';
+  font-size: 30px;
+  display:flex;
+  min-height: 200px;
+  max-height: 600px;
+  color:green ;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #bba31c
+}
+
+
+.Select-menu-outer {
+  z-index: 999 !important;
+  position: relative;
+}

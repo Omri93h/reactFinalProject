@@ -1,0 +1,9 @@
+{
+  "short_name": "Currenger",
+  "name": "Currenger - Auto Crypto Analysis & Trader",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
