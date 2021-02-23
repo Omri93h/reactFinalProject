@@ -38,7 +38,6 @@ async function getUser() {
     withCredentials: true,
   })
   const data = await response.json();
-  console.log("the data:", data)
   return data;
 }
 
@@ -56,7 +55,6 @@ async function setTheUser(data, setAuth, setHasBinanceAPI, setThumbnailUrl) {
   }
   catch {
     setAuth(false);
-    console.log("ERRRRRROR")
     return null
   }
 }
@@ -79,9 +77,6 @@ function App() {
       setThumbnailUrl(undefined);
       const data = await getUser();
       await setTheUser(data, setAuth, setHasBinanceAPI, setThumbnailUrl);
-      console.log("AUTH:", isAuthorized);
-      console.log("hasBinanceAPI:", hasBinanceAPI);
-      console.log("thumbnailUrl:", thumbnailUrl);
       setUserData(data);
     };
     Fetch();
