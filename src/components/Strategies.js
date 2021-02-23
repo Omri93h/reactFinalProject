@@ -72,7 +72,7 @@ const Strategies = ({ userData }) => {
     const onSubmit = async (data) => {
         setEditPopup(false)
         data.id = currentStrategyId;
-        editActiveStrategy(data);
+        await editActiveStrategy(data);
         await getActiveStrategies(setLoading, setActiveStrategies);
     }
 
