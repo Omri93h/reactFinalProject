@@ -5,7 +5,7 @@ import { Input } from '@material-ui/core';
 
 async function insertUserApi(data) {
     var new_data = { binance_key: data.binance_key, binance_private: data.binance_private };
-    fetch('https://currenger.herokuapp.com/profile/', {
+    fetch('https://currenger.herokuapp.com/profile', {
         method: 'PUT',
         body: JSON.stringify(new_data),
         headers: {
@@ -14,8 +14,8 @@ async function insertUserApi(data) {
         credentials: 'include',
         withCredentials: 'true'
     })
-        .then(data => console.log(data)) 
-        .catch(err => console.log(err)) 
+        .then(data => console.log(data))
+        .catch(err => console.log(err))
 }
 
 export const loginButton = (
@@ -27,13 +27,12 @@ export const loginButton = (
 const Login = (props) => {
     console.log(props);
     const { control, handleSubmit } = useForm();
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
         async function insert(data) {
             await insertUserApi(data);
         }
-        insert(data);
         props.setHasBinanceAPI(true);
-        window.location.replace("/dashboard");
+        await insert(data)
     }
 
     const formStyle = {
