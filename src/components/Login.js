@@ -31,8 +31,8 @@ const Login = (props) => {
         async function insert(data) {
             await insertUserApi(data);
         }
-        props.setHasBinanceAPI(true);
         await insert(data)
+            .then(props.setHasBinanceAPI(true))
     }
 
     const formStyle = {
