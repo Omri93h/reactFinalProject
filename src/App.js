@@ -70,6 +70,12 @@ function App() {
   const [userOrders, setUserOrders] = useState("");
   const [userTotal, setUserTotal] = useState({ BTC: 0, USD: 0 });
 
+  const userControl = { userData, setUserData }
+  const authorization = { isAuthorized, setAuth };
+  const balance = { userBalance, setUserBalance };
+  const orders = { userOrders, setUserOrders };
+  const totalValue = { userTotal, setUserTotal };
+  
   useEffect(() => {
     async function Fetch() {
       setAuth(false);
@@ -82,11 +88,7 @@ function App() {
     Fetch();
   }, []);
 
-  const userControl = { userData, setUserData }
-  const authorization = { isAuthorized, setAuth };
-  const balance = { userBalance, setUserBalance };
-  const orders = { userOrders, setUserOrders };
-  const totalValue = { userTotal, setUserTotal };
+
 
   return (
     <div className="App">

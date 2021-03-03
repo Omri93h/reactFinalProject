@@ -25,7 +25,6 @@ export const loginButton = (
 )
 
 const Login = (props) => {
-    console.log(props);
     const { control, handleSubmit } = useForm();
     const onSubmit = (data) => {
         async function insert(data) {

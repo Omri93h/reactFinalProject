@@ -43,7 +43,6 @@ const ManualOrder = ({ match }) => {
     };
 
     const onSubmit = async (data) => {
-        console.log(data);
         data.symbol = data.symbol.value;
         data.action_type = actionType;
         if (orderType === "limit")
@@ -188,7 +187,6 @@ const ManualOrder = ({ match }) => {
                                         onChange={e => {
                                             onChange(e)
                                             setLimitPrice((e))
-                                            console.log(limitPrice)
                                         }}
                                         format={floatFormat}
                                         defaultValue={currencyPrice.toString()}

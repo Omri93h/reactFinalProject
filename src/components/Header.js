@@ -71,13 +71,6 @@ const Header = (props) => {
         </>
     );
 
-
-    // if (props.authorization.isAuthorized === true) {
-    //     console.log("user connected")
-    // } else {
-    //     console.log("NOT CONNECTED")
-    // }
-
     return (
         <header>
             <Link to="/">

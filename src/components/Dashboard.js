@@ -9,7 +9,7 @@ import CancelIcon from '@material-ui/icons/Cancel';
 const Dashboard = ({ balance, orders, totalValue }) => {
     const [loading, setLoading] = useState(true);
     const [refresh, setRefresh] = useState(false);
-    console.log(orders, balance, totalValue)
+    // console.log("orders:", orders, "balance:", balance);
     useEffect(() => {
         async function getBalance() {
             const url = 'https://currenger.herokuapp.com/api/portfolio/';
@@ -21,7 +21,6 @@ const Dashboard = ({ balance, orders, totalValue }) => {
                 }
             });
             const balance = await response.json();
-            console.log(response);
             const data = []
             for (const i in balance) {
                 balance[i].id === 'BTC' ?
@@ -56,10 +55,13 @@ const Dashboard = ({ balance, orders, totalValue }) => {
         }
 
         async function getOrders() {
-            const url = 'https://currenger.herokuapp.com/api/orders';
-            const response = await fetch(url, {
+            const response = await fetch('https://currenger.herokuapp.com/api/orders', {
                 credentials: 'include',
-                withCredentials: 'true'
+                withCredentials: 'true',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                }
             });
             const userOrders = await response.json();
             return userOrders;
@@ -89,7 +91,7 @@ const Dashboard = ({ balance, orders, totalValue }) => {
         (async function refreshBalance() {
             if (refresh) {
                 await userData();
-                setRefresh(false)
+                setRefresh(false);
             }
         })()
 
@@ -167,10 +169,11 @@ const Dashboard = ({ balance, orders, totalValue }) => {
                     <div className="fade-in-fast" style={positionsDataStyle}>
                         <div id="symbol" style={tableCell}>
                             <div className="table-cell-header" >Symbol</div>
-                            {orders.userOrders.map((order, i) => (
-                                <div key={i} style={orderDataStyle} >
-                                    {order.symbol}
-                                </div>))
+                            {
+                                orders.userOrders.map((order, i) => (
+                                    <div key={i} style={orderDataStyle} >
+                                        {order.symbol}
+                                    </div>))
                             }
                         </div>
                         <div id="amount" style={tableCell}>
@@ -213,7 +216,7 @@ const Dashboard = ({ balance, orders, totalValue }) => {
                         </div>
                     </div>
                     :
-                    ""}
+                    <div></div>}
 
             </section>
 
